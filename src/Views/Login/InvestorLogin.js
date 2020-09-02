@@ -4,7 +4,9 @@ import './Login.scss';
 import '../Home/Home.scss'
 import CustomBar from '../../Components/Navbar/CustomBar';
 import izmir from '../../izmir.jpg';
-import axios from "axios";
+import { useHistory } from 'react-router-dom';
+
+
 
 class InvestorLogin extends Component {
 
@@ -13,7 +15,8 @@ class InvestorLogin extends Component {
     this.state = {
       email: "",
       password: "",
-      currentEmail:""
+      currentEmail:"",
+      succ: false
 
     };
   }
@@ -25,67 +28,37 @@ class InvestorLogin extends Component {
     this.setState({email: event.target.value});
   }
 
-  login() {
-    const {email, password,currentEmail} = this.state;
-
-
+  login = () => {
+    const {email, password} = this.state;
 
     let body = {
         "email": email,
         "password": password,
-        "type": "investor",
+        "type": "investor"
+       
     }
 
-      axios({
-        method: 'post',
-        url: 'http://localhost:8080/login',
-        data: body
+      fetch("http://localhost:8080/login", {
+        method: "POST",
+        body: body
       })
-    .then(function (response) {
-        console.log(response);
-
-
-// if succc
-// localStorage.setItem(key, JSON.stringify(result.hits));
-
-// onSearch = event => {
-//   event.preventDefault();
-
-//   const currentEmail = localStorage.getItem("email");
-//  console.log(currentEmail);
-//   if (currentEmail) {
-//     this.setState({ currentEmail: JSON.parse(currentEmail) });
-//   } else {
-//      axios({
-//   method: 'post',
-//   url: 'http://localhost:8080/login',
-//   data: body
-// })
-// .then(function (response) {
-//   console.log(response);
-//       .then(result => this.onSetResult(result, query));
-//   }
-// };
-
-// onSetResult = (result, key) => {
-//   localStorage.setItem(key, JSON.stringify(result.hits));
-
-//   this.setState({ hits: result.hits });
-// };
-
-
-
+      .then((resp) => {
+        console.log(resp);
+        return resp.text();
+      }) 
+      .then((data) => {
+        console.log(data);
+        this.setState({succ:(data==="SUCCESS")})
       })
-      .catch(function (error) {
-        console.log(error);
-      });
-
-
+      .catch((error) => {
+        console.log(error, "catch the hoop")
+      })
+    
 }
-
 
   render() {
     const { email, password } = this.state;
+    console.log(this.state)
     return (
       <div className="login">
         <CustomBar />
@@ -103,16 +76,14 @@ class InvestorLogin extends Component {
               <input type="password" id="password" value={password} onChange={(e) => {this.handlePWChange(e)}} />
             </p>
             <p className="button">
-              <input type="button" value="Login" onClick={() => { console.log("login") }} />
+              <input type="button" value="Login" onClick={this.login} />
             </p>
             
             <a className="small-sign-up" href="/investor-registration">Don't have an account? 
-              <span style={{pointer:"cursor"}}><a onClick={() => { console.log("dummy sign up") }} style={{ pointer: "cursor", fontWeight:"600" }}> Sign up </a></span>
+              <span style={{pointer:"cursor"}}><a onClick={() => {  }} style={{ pointer: "cursor", fontWeight:"600" }}> Sign up </a></span>
             and join our Network!</a>
 
           </div>
-
-
         </div>
       </div>
     );

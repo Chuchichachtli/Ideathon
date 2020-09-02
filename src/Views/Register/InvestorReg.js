@@ -43,6 +43,7 @@ class InvestorReg extends Component {
           }) 
           .then((data) => {
             console.log(data);
+            if(data==="SUCCESS")
             this.setState({succ: true});
           })
           .catch((error) => {
@@ -116,7 +117,7 @@ class InvestorReg extends Component {
 
 
   render() {
-    const { email, password, name, ilgi, currentIlgi } = this.state;
+    const { email, password, name, ilgi, currentIlgi, succ } = this.state;
     return (
       <div className="login">
         <CustomBar />
@@ -141,7 +142,9 @@ class InvestorReg extends Component {
               <label>İlgi Alanlarınız:</label>
               <input type="text" value={currentIlgi} onChange={(e) => {this.handleIlgiChange(e)}} onKeyPress={this.enterPressed.bind(this)}/>
             </p>
+            {succ ? <p style={{textAlign:"center"}} className="text-success">Kayıt başarılı.</p> : null}
 
+            
             <p className="button">
               <input type="button" value="Register" onClick={this.signup} />
             </p>
