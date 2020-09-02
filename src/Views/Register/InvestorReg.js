@@ -95,7 +95,7 @@ class InvestorReg extends Component {
         console.log(this.state);
       return ( ilgi.map((item=> {
           return ( 
-            <p style={{textAlign:"center", border:"1px solid purple", borderRadius:"5px"}}>
+            <div  class="alert alert-success" role="alert">
               <label>{item}</label>
                   <span style={{ float: "right", marginRight: "10px", cursor: "pointer" }}
                       onClick={() => {
@@ -107,7 +107,7 @@ class InvestorReg extends Component {
                       }
                       }
                   >X</span>
-            </p>  
+            </div>  
           )
       }))
       )
@@ -119,45 +119,44 @@ class InvestorReg extends Component {
   render() {
     const { email, password, name, ilgi, currentIlgi, succ } = this.state;
     return (
-      <div className="login">
+      <>
         <CustomBar />
-        <div className="App-header">
+        <div class="container">
 
-          <div className="login-cont">
-            <img src={izmir} className="log-image" />
-            <p>
+          <form>
+            {/* <img src={izmir} className="log-image" /> */}
+            <div class="form-group">
               <label>Email:</label>
-              <input type="text" value={email} onChange={(e) => {this.handleEmailChange(e)}}/>
-            </p>
-            <p>
+              <input class="form-control" type="text" value={email} onChange={(e) => {this.handleEmailChange(e)}}/>
+            </div>
+            <div class="form-group">
               <label>Full Name:</label>
-              <input type="text" value={name} onChange={(e) => {this.handleNameChange(e)}}/>
-            </p>
-            <p>
+              <input class="form-control" type="text" value={name} onChange={(e) => {this.handleNameChange(e)}}/>
+            </div>
+            <div class="form-group">
               <label>Password:</label>
-              <input type="password" id="password" value={password} onChange={(e) => {this.handlePWChange(e)}} />
-            </p>
+              <input class="form-control" type="password" id="password" value={password} onChange={(e) => {this.handlePWChange(e)}} />
+            </div>
             {this.renderTopics()}
-            <p>
+            <div class="form-group">
               <label>İlgi Alanlarınız:</label>
-              <input type="text" value={currentIlgi} onChange={(e) => {this.handleIlgiChange(e)}} onKeyPress={this.enterPressed.bind(this)}/>
-            </p>
+              <input class="form-control" type="text" value={currentIlgi} onChange={(e) => {this.handleIlgiChange(e)}} onKeyPress={this.enterPressed.bind(this)}/>
+            </div>
             {succ ? <p style={{textAlign:"center"}} className="text-success">Kayıt başarılı.</p> : null}
 
             
-            <p className="button">
-              <input type="button" value="Register" onClick={this.signup} />
-            </p>
+            <input class="btn btn-default" type="button" value="Register" onClick={this.signup} />
+
 
             {/* <span className="small-sign-up">Don't have an account? 
               <span style={{pointer:"cursor"}}><a onClick={() => { console.log("dummy sign up") }} style={{ pointer: "cursor", fontWeight:"600" }}> Sign up </a></span>
             and join our Network!</span> */}
 
-          </div>
+          </form>
 
 
         </div>
-      </div>
+      </>
     );
   }
 }

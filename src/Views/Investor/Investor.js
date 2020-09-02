@@ -30,10 +30,19 @@ class Investor extends Component {
             {startups.map((item => {
                 console.log(item, "asd")
                 return (
-                        <div class="compCont" style={{border:"1px solid black", width:"500px", margin:"10px auto auto auto", borderRadius:"10px", textAlign:"left"}}>
-                            <span className="span-left">{item[0]}</span>
-                            <span className="span-right" style={{position:"relative", right:"10px"}}>{item[1]}</span>
-                        </div>
+
+
+                    <div class="col-md-12">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{item[1]}</strong>
+          <h3 class="mb-0">{item[0]}</h3>
+          <div class="mb-1 text-muted">Nov 12</div>
+          <p class="card-text mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="stretched-link">Continue reading</a>
+        </div>
+      </div>
+    </div>
                 )
 
 
@@ -52,9 +61,9 @@ class Investor extends Component {
     render() {
         const { email, password } = this.state;
         return (
-            <div className="login">
+            <div>
                 <CustomBar />
-                <div className="App-header">
+                <div class="container">
 
                   
                         <div>{this.renderCompanies()}</div>

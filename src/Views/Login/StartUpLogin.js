@@ -26,33 +26,29 @@ class StartUpLogin extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div className="login">
+      <>
         <CustomBar />
-        <div className="App-header">
+        <div class="container">
 
-          <div className="login-cont">
-            <img src={izmir} className="log-image" />
-            <p>
-              <label>Email:</label>
-              <input type="text" value={email} onChange={(e) => {this.handleEmailChange(e)}}/>
-            </p>
+          <form>
+            <div class="form-group">
+              <label for="email">Email:</label>
+              <input class="form-control" type="email" id="email" value={email} onChange={(e) => {this.handleEmailChange(e)}}/>
+            </div>
 
-            <p>
+            <div class="form-group">
               <label>Password:</label>
-              <input type="password" id="password" value={password} onChange={(e) => {this.handlePWChange(e)}} />
-            </p>
-            <p className="button">
-              <input type="button" value="Login" onClick={() => { console.log("login") }} />
-            </p>
-            <span className="small-sign-up">Don't have an account? 
-              <span style={{pointer:"cursor"}}><a onClick={() => { console.log("dummy sign up") }} style={{ pointer: "cursor", fontWeight:"600" }}> Sign up </a></span>
-              for your Start-up and join our Network!</span>
+              <input class="form-control" type="password" id="password" value={password} onChange={(e) => {this.handlePWChange(e)}} />
+            </div>
+            <input class="btn btn-default" ype="button" value="Login" onClick={this.login} />
+            
+            <a className="small-sign-up" href="/start-up-registration">Don't have an account? 
+              <span style={{pointer:"cursor"}}><a onClick={() => {  }} style={{ pointer: "cursor", fontWeight:"600" }}> Sign up </a></span>
+            and join our Network!</a>
 
-          </div>
-
-
+          </form>
         </div>
-      </div>
+      </>
     );
   }
 }
