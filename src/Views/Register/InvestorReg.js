@@ -22,7 +22,7 @@ class InvestorReg extends Component {
       succ: false
     };
   }
-    async signup() {
+  signup = () => {
         const {email, password, name, ilgi} = this.state;
 
         let body = {
@@ -32,21 +32,26 @@ class InvestorReg extends Component {
             "type": "investor",
             "topics": ilgi
         }
-        var res;
-        await axios.post('http://localhost:8080/signup', body)
-        .then(function (response) {
-            res = response
-            console.log(res);
-            console.log(res.status, res.data, "sd")
-            return res.data;
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
 
-    
-}
-loginSucc = (response) => {
+          fetch("http://localhost:8080/signup", {
+            method: "POST",
+            body: body
+          })
+          .then((resp) => {
+            console.log(resp);
+            return resp.text();
+          }) 
+          .then((data) => {
+            console.log(data);
+            this.setState({succ: true});
+          })
+          .catch((error) => {
+            console.log(error, "catch the hoop")
+          })
+        
+    }
+  
+  loginSucc = (response) => {
     if(response.data === "SUCCESS"){
         this.setState({succ: true, password:""});
     }
@@ -138,13 +143,7 @@ loginSucc = (response) => {
             </p>
 
             <p className="button">
-              <input type="button" value="Register" onClick={async () => { 
-                  let x = await this.signup().then((x)=>{
-                      console.log(x, "devamke")
-                  })
-                 
-                 console.log(x, "sadadsasdsa")
-             }} />
+              <input type="button" value="Register" onClick={this.signup} />
             </p>
 
             {/* <span className="small-sign-up">Don't have an account? 
