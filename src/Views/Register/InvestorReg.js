@@ -25,34 +25,20 @@ class InvestorReg extends Component {
     async signup() {
         const {email, password, name, ilgi} = this.state;
 
-
-
         let body = {
             "email": email,
             "password": password,
-             "name": name,
+            "name": name,
             "type": "investor",
             "topics": ilgi
         }
-        // axios.post('localhost:8080/signup', body)
-        //   .then(function (response) {
-        //     console.log(response);
-        //   })
-        //   .catch(function (error) 
-        //     console.log(error);
-        //   });
-
-          var response = await axios.post( 'http://localhost:8080/signup', body)
+        var res;
+        await axios.post('http://localhost:8080/signup', body)
         .then(function (response) {
-            console.log(response);
-            console.log(response.status, response.data, "sd")
-            
-            let parsedJson = JSON.parse(response);
-            
-            return response.data;
-            
-            
-
+            res = response
+            console.log(res);
+            console.log(res.status, res.data, "sd")
+            return res.data;
           })
           .catch(function (error) {
             console.log(error);
@@ -152,14 +138,12 @@ loginSucc = (response) => {
             </p>
 
             <p className="button">
-              <input type="button" value="Register" onClick={() => { 
-                  let x = this.signup();
-                  console.log(x, "sad") 
-                  if(x === "SUCCESS"){
-                      
-                      this.setState({succ: true, password:""})
-                      
-                  }
+              <input type="button" value="Register" onClick={async () => { 
+                  let x = await this.signup().then((x)=>{
+                      console.log(x, "devamke")
+                  })
+                 
+                 console.log(x, "sadadsasdsa")
              }} />
             </p>
 
