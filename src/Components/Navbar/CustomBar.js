@@ -23,7 +23,7 @@ function CustomBar() {
               <a class="nav-link text-light" href="/start-up-login">Start-up Log-in<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="/mentor-login">Mentor Login</a>
+              <a class="nav-link text-light" href="/investor-registration">Investor Registration</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-light" href="/investor-login">Yatırımcı Login</a>

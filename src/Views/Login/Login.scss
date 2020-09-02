@@ -3,13 +3,13 @@
 }
 
 .login-cont {
-    width: 40%;
+    width: 60%;
     padding: 20px;
     background: rgba($color: white, $alpha: 0.7);
     border-radius: 15px;
     border: 5px solid purple;
     text-align: center;
-    margin: 100px auto 50px auto;
+    margin: 20px auto 50px auto;
     max-height: 90%;
     overflow: scroll;
 }
@@ -49,7 +49,7 @@ input {
 }
 
 .log-image { 
-    width: 50%;
+    width: 40%;
     // margin-left: 25%;
     margin-bottom: 10px;
 }

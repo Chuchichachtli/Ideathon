@@ -4,8 +4,10 @@ import '../Login/Login.scss';
 import '../Home/Home.scss'
 import CustomBar from '../../Components/Navbar/CustomBar';
 import izmir from '../../izmir.jpg';
-import {fetch } from "isomorphic-fetch";
-import {Auth_Actions} from "form-data"
+// import {fetch } from "isomorphic-fetch";
+// import {Auth_Actions, FormData} from "form-data"
+import axios from "axios";
+
 
 class InvestorReg extends Component {
 
@@ -16,48 +18,55 @@ class InvestorReg extends Component {
       password: "",
       name: "",
       ilgi: [],
-      currentIlgi : ""
+      currentIlgi : "",
+      succ: false
     };
   }
-//     signup() {
-//         const {email, password, name, ilgi} = this.state;
-//     return (dispatch) => {
+    async signup() {
+        const {email, password, name, ilgi} = this.state;
 
-//         let formData = new FormData()
-//         formData.append('email',email);
-//         formData.append('password' ,password);
-//         formData.append('name',name);
-//         formData.append('type', "investor");
-//         formData.append('topics', ilgi);
-        
 
-//         fetch("localhost:8080/signup", {
-//           method: 'post',
-//           body: formData,
-//           headers: new Headers({
-//             'content-type': 'application/x-www-form-urlencoded; charset=utf-8',
-//             'Accept': 'application/json, application/xml, text/plain, text/html, *.*'
-//           }),
-//         })
-//         .then((res) => res.json())
-//         .then((res) => {
-//             console.log('Fetch signup result:',res)
-//             console.log('dispatch:',dispatch)
-//             dispatch({
-//                 type        : Auth_Actions.SignUp_Success,
-//                 userObject  : res
-//             })
-//         })
-//         .catch((err)=>{
-//             console.error('Fetch signup ERROR:',err)
-//             dispatch({
-//                 type        : Auth_Actions.SignUp_Fail,
-//                 userObject  : err
-//             })
-//         });
 
-//     }
-// }
+        let body = {
+            "email": email,
+            "password": password,
+             "name": name,
+            "type": "investor",
+            "topics": ilgi
+        }
+        // axios.post('localhost:8080/signup', body)
+        //   .then(function (response) {
+        //     console.log(response);
+        //   })
+        //   .catch(function (error) 
+        //     console.log(error);
+        //   });
+
+          var response = await axios.post( 'http://localhost:8080/signup', body)
+        .then(function (response) {
+            console.log(response);
+            console.log(response.status, response.data, "sd")
+            
+            let parsedJson = JSON.parse(response);
+            
+            return response.data;
+            
+            
+
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
+
+    
+}
+loginSucc = (response) => {
+    if(response.data === "SUCCESS"){
+        this.setState({succ: true, password:""});
+    }
+    console.log(this.state.succ)
+};
+
 
 
   handlePWChange(event) {
@@ -91,7 +100,7 @@ class InvestorReg extends Component {
 
   renderTopics(){  
       const { ilgi } = this.state;  
-      
+        console.log(this.state);
       return ( ilgi.map((item=> {
           return ( 
             <p style={{textAlign:"center", border:"1px solid purple", borderRadius:"5px"}}>
@@ -143,7 +152,15 @@ class InvestorReg extends Component {
             </p>
 
             <p className="button">
-              <input type="button" value="Register" onClick={() => {  }} />
+              <input type="button" value="Register" onClick={() => { 
+                  let x = this.signup();
+                  console.log(x, "sad") 
+                  if(x === "SUCCESS"){
+                      
+                      this.setState({succ: true, password:""})
+                      
+                  }
+             }} />
             </p>
 
             {/* <span className="small-sign-up">Don't have an account? 
