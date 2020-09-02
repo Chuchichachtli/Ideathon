@@ -17,7 +17,6 @@ class InvestorLogin extends Component {
       password: "",
       currentEmail:"",
       succ: false
-
     };
   }
 

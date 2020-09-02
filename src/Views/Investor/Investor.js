@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../Login/Login.scss';
-import "./Investor.scss";
 import CustomBar from '../../Components/Navbar/CustomBar';
 import axios from "axios";
 import { fetch } from 'isomorphic-fetch';
