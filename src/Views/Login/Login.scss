@@ -1,0 +1,55 @@
+.login{
+    text-align: center;
+}
+
+.login-cont {
+    width: 40%;
+    padding: 20px;
+    background: rgba($color: white, $alpha: 0.7);
+    border-radius: 15px;
+    border: 5px solid purple;
+    text-align: center;
+    margin: 100px auto 50px auto;
+    max-height: 90%;
+    overflow: scroll;
+}
+
+.small-sign-up{
+    font-size: 15px;
+    color: purple;
+    padding: 0;
+    margin: 0;;
+}
+
+p{
+    text-align: left;
+}
+
+label{
+    color: purple;
+    width: 25%;
+    margin-right: 0;
+    font-size: 23px;
+}
+
+input {
+    width: 70%;
+    border-radius: 10px;
+    border: 1px solid purple;
+    outline: none;
+    caret-color: purple;
+    padding: 5px;
+    font-size: 20px;
+    
+}
+
+.button{
+    text-align: center;
+    pointer: cursor;
+}
+
+.log-image { 
+    width: 50%;
+    // margin-left: 25%;
+    margin-bottom: 10px;
+}

@@ -1,26 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Switch, Route } from 'react-router-dom';
+import Home from "./Views/Home/Home";
+import StartUpLogin from './Views/Login/StartUpLogin';
+import InvestorLogin from './Views/Login/InvestorLogin';
+import MentorLogin from './Views/Login/MentorLogin';
+import InvestorReg from './Views/Register/InvestorReg';
+// import Labeled from "./views/LabeledView";
+// import ErrorView from "./views/ErrorView";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+
+  render() {
+    return (
+
+       <main>
+       <Switch>
+           <Route path="/" component={Home} exact />
+           <Route path="/start-up-login" component={StartUpLogin} />
+           <Route path="/mentor-login" component={InvestorReg} />
+           <Route path="/investor-login" component={InvestorLogin} />
+           <Route component={Home} />
+       </Switch>
+   </main>
+    )
+  }
 }
-
 export default App;
