@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 // import './Login.scss';
 // import '../Home/Home.scss'
-import CustomBar from '../../Components/Navbar/CustomBar';
+// import CustomBar from '../../Components/Navbar/CustomBar';
 // import izmir from '../../izmir.jpg';
 
 class FikirForm extends Component {
@@ -52,11 +52,11 @@ class FikirForm extends Component {
   render() {
     const { adSoyad, yas, telefon, eposta, projeKisaca, projeNedeni, projeKategori, projeMaliyet} = this.state;
     return (
-      <div className="login">
-        <CustomBar />
-        <div className="App-header">
+      <div>
+        {/* <CustomBar /> */}
+        <div>
 
-          <div className="login-cont">
+          <div>
 
             <p>
               <label>Ad Soyad:</label>
@@ -127,8 +127,8 @@ class FikirForm extends Component {
 
 
 
-            <p className="button">
-              <input type="button" value="Gönder" onClick={() => { alert(projeMaliyet); }} />
+            <p>
+              <input type="button" value="Gönder" onClick={() => { alert(projeMaliyet) }} />
             </p>
 
           </div>
