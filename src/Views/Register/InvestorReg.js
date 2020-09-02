@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import '../Login/Login.scss';
-import '../Home/Home.scss'
+// import '../Login/Login.scss';
+// import '../Home/Home.scss'
 import CustomBar from '../../Components/Navbar/CustomBar';
 import izmir from '../../izmir.jpg';
 // import {fetch } from "isomorphic-fetch";
