@@ -4,6 +4,8 @@ import '../Login/Login.scss';
 import '../Home/Home.scss'
 import CustomBar from '../../Components/Navbar/CustomBar';
 import izmir from '../../izmir.jpg';
+import {fetch } from "isomorphic-fetch";
+import {Auth_Actions} from "form-data"
 
 class InvestorReg extends Component {
 
@@ -17,6 +19,46 @@ class InvestorReg extends Component {
       currentIlgi : ""
     };
   }
+//     signup() {
+//         const {email, password, name, ilgi} = this.state;
+//     return (dispatch) => {
+
+//         let formData = new FormData()
+//         formData.append('email',email);
+//         formData.append('password' ,password);
+//         formData.append('name',name);
+//         formData.append('type', "investor");
+//         formData.append('topics', ilgi);
+        
+
+//         fetch("localhost:8080/signup", {
+//           method: 'post',
+//           body: formData,
+//           headers: new Headers({
+//             'content-type': 'application/x-www-form-urlencoded; charset=utf-8',
+//             'Accept': 'application/json, application/xml, text/plain, text/html, *.*'
+//           }),
+//         })
+//         .then((res) => res.json())
+//         .then((res) => {
+//             console.log('Fetch signup result:',res)
+//             console.log('dispatch:',dispatch)
+//             dispatch({
+//                 type        : Auth_Actions.SignUp_Success,
+//                 userObject  : res
+//             })
+//         })
+//         .catch((err)=>{
+//             console.error('Fetch signup ERROR:',err)
+//             dispatch({
+//                 type        : Auth_Actions.SignUp_Fail,
+//                 userObject  : err
+//             })
+//         });
+
+//     }
+// }
+
 
   handlePWChange(event) {
     this.setState({password: event.target.value});
@@ -101,7 +143,7 @@ class InvestorReg extends Component {
             </p>
 
             <p className="button">
-              <input type="button" value="Register" onClick={() => { console.log("login") }} />
+              <input type="button" value="Register" onClick={() => {  }} />
             </p>
 
             {/* <span className="small-sign-up">Don't have an account? 
