@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import CustomBar from '../../Components/Navbar/CustomBar';
 import koneksin from '../../koneksin.jpg'
 import CFooter from '../../Components/CFooter';
+import homeJpeg from '../../home.jpeg';
 
 function Home() {
   return (
@@ -34,6 +35,9 @@ function Home() {
       </div>
     </div>
   </div>
+  <p style={{textAlign:"center"}}>
+  <img  src={homeJpeg}/>
+  </p>
     </div>
 <CFooter/>
 </div>
