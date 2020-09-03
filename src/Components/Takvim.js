@@ -11,7 +11,7 @@ function Takvim() {
                 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>	
                 <>
 	<div class="container">
-		<div class="row row-striped">
+		<div class="row row-striped" style={{marginBottom:"10px"}}>
 			<div class="col-2 text-right">
 				<h1 class="display-4"><span class="badge badge-secondary">23</span></h1>
 				<h2>OCT</h2>
