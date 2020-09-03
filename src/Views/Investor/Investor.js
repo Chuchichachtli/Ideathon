@@ -40,7 +40,7 @@ class Investor extends Component {
         const { startups } = this.state;
         console.log(startups, "asddd")
         return (
-            <div className="bg-div">
+            <div className="">
                 <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Arama</span>
@@ -52,7 +52,7 @@ class Investor extends Component {
                 console.log(item, "asd")
                 return (
                     <div class="col-md-12">
-                        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-light">
                             <div class="col p-4 d-flex flex-column position-static">
                                 <strong class="d-inline-block mb-2 text-primary">{item.projeAdi}</strong>
                                 <h3 class="mb-0">{item.projeAdi}</h3>
@@ -78,7 +78,7 @@ class Investor extends Component {
     render() {
         const { email, password } = this.state;
         return (
-            <div>
+            <div className="bg-div">
                 <CustomBar />
                 <div class="container">
                         <div>{this.renderCompanies()}</div>
