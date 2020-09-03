@@ -144,7 +144,7 @@ renderTopics = ()=>{
         <>
         <CustomBar />
           <div class="container">
-            <form>
+            <form style={{paddingBottom:"30px"}}>
             <div class="form-group">
               <label for="adSoyad">Ad Soyad:</label>
               <input class="form-control" id="adSoyad" type="text" value={adSoyad} onChange={(e) => {this.handleAdSoyadChange(e)}}/>
@@ -231,7 +231,8 @@ renderTopics = ()=>{
 
 
 
-            <input class="form-control" type="button" value="Gönder" onClick={() => { alert(projeMaliyet) }} />
+            {/* <input class="form-control" type="button" value="Gönder" onClick={() => { alert(projeMaliyet) }} /> */}
+            <a class="form-control" style={{textAlign:"center"}} href="/start-up">Gönder</a>
             </form>
 
           </div>
