@@ -59,7 +59,7 @@ class Investor extends Component {
                   
                         <div>{this.renderCompanies()}</div>
 
-                   
+                        <iframe style={{position:"absolute", bottom:"0px", right:"0"}} height="800px" width="500px" src="https://bot.dialogflow.com/1fcb06cd-b346-438c-ac30-9a3f9aee45f2"></iframe>
 
                 </div>
             </div>
