@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import CustomBar from '../../Components/Navbar/CustomBar';
 import axios from "axios";
+import CFooter from '../../Components/CFooter';
 
 class Investor extends Component {
 
@@ -82,6 +83,7 @@ class Investor extends Component {
                 <div class="container">
                         <div>{this.renderCompanies()}</div>
                 </div>
+                <CFooter/>
             </div>
         );
     }

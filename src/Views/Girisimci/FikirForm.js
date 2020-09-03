@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import '../Home/Home.scss'
 import CustomBar from '../../Components/Navbar/CustomBar';
 import "../../hoppa.scss"
+import CFooter from '../../Components/CFooter';
 // import izmir from '../../izmir.jpg';
 
 class FikirForm extends Component {
@@ -140,6 +141,7 @@ renderTopics = ()=>{
 
 
   render() {
+
     const { adSoyad, yas, telefon, eposta, projeAdi, projeKisaca, projeNedeni, projeKategori, projeMaliyet, projeYatirim} = this.state;
     return (
         <div className="bg-div">
@@ -237,8 +239,11 @@ renderTopics = ()=>{
             </form>
 
           </div>
+          <CFooter/>
         </div>
     );
+  
+  
   }
 }
 

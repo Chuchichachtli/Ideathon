@@ -5,6 +5,7 @@ import "../../hoppa.scss";
 import CustomBar from '../../Components/Navbar/CustomBar';
 import izmir from '../../izmir.jpg';
 import { useHistory } from 'react-router-dom';
+import CFooter from '../../Components/CFooter';
 
 
 
@@ -81,6 +82,7 @@ class InvestorLogin extends Component {
 
           </form>
         </div>
+        <CFooter/>
       </div>
     );
   }

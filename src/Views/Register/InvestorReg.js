@@ -7,6 +7,7 @@ import izmir from '../../izmir.jpg';
 // import {fetch } from "isomorphic-fetch";
 // import {Auth_Actions, FormData} from "form-data"
 import axios from "axios";
+import CFooter from '../../Components/CFooter';
 
 
 class InvestorReg extends Component {
@@ -156,6 +157,7 @@ class InvestorReg extends Component {
 
 
         </div>
+        <CFooter/>
       </div>
     );
   }

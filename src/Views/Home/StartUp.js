@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import CustomBar from '../../Components/Navbar/CustomBar';
 import koneksin from '../../koneksin.jpg'
 import Takvim from '../../Components/Takvim';
+import CFooter from '../../Components/CFooter';
 
 function StartUp() {
   return (
@@ -102,7 +103,7 @@ function StartUp() {
 </iframe>
 
 
-
+    <CFooter/>
     </div>
   );
 }

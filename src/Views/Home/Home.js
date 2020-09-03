@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import './Home.scss';
 import CustomBar from '../../Components/Navbar/CustomBar';
 import koneksin from '../../koneksin.jpg'
+import CFooter from '../../Components/CFooter';
 
 function Home() {
   return (
@@ -34,7 +35,7 @@ function Home() {
     </div>
   </div>
     </div>
-
+<CFooter/>
 </div>
   );
 }

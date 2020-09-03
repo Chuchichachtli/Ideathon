@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import '../Home/Home.scss'
 import CustomBar from '../../Components/Navbar/CustomBar';
 import izmir from '../../izmir.jpg';
+import CFooter from '../../Components/CFooter';
 
 class StartUpLogin extends Component {
 
@@ -48,6 +49,7 @@ class StartUpLogin extends Component {
 
           </form>
         </div>
+        <CFooter/>
       </div>
     );
   }
