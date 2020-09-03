@@ -40,6 +40,13 @@ class Investor extends Component {
         console.log(startups, "asddd")
         return (
             <>
+                <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Arama</span>
+                </div>
+                <input type="text" class="form-control" placeholder="Nasıl fikirler görmek istersiniz?" aria-label="keywords" aria-describedby="basic-addon1"/>
+                </div>             
+
             {startups.map((item => {
                 console.log(item, "asd")
                 return (
@@ -50,7 +57,7 @@ class Investor extends Component {
                                 <h3 class="mb-0">{item.projeAdi}</h3>
                                 <div class="mb-1 text-muted">Nov 12</div>
                                 <p class="card-text mb-auto">{item.projeMetni}</p>
-                                <a href="#" class="stretched-link">Continue reading</a>
+                                <a href="#" class="stretched-link">Devamını oku</a>
                             </div>
                         </div>
                     </div>
