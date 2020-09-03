@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import CustomBar from '../../Components/Navbar/CustomBar';
 import axios from "axios";
-import { fetch } from 'isomorphic-fetch';
-
 
 class Investor extends Component {
 
@@ -11,8 +9,23 @@ class Investor extends Component {
         super(props);
         this.state = {
             email: "",
-            startups: [["marti", "%99"], ["patatesGetir", "%50"], ["yohey", "asd"]]
+            startups: [["marti", "%99", "item3"], ["patatesGetir", "%50", "item4"], ["yohey", "asd", "item5"]],
+            Results : ""
         };
+
+        fetch("http://localhost:8080/getStartUps", {
+        method: "GET",
+      })
+      .then((resp) => {
+        return resp.json()
+      }) 
+      .then((data) => {
+        console.log(data);
+        this.setState({startups: data});
+      })
+      .catch((error) => {
+        console.log(error, "catch the hoop")
+      })
     }
 
     handlePWChange(event) {
@@ -24,19 +37,24 @@ class Investor extends Component {
 
     renderCompanies = () => {
         const { startups } = this.state;
-        console.log(startups, "asd")
+        console.log(startups, "asddd")
         return (
             <>
             {startups.map((item => {
                 console.log(item, "asd")
                 return (
-                        <div class="compCont" style={{border:"1px solid black", width:"500px", margin:"10px auto auto auto", borderRadius:"10px", textAlign:"left"}}>
-                            <span className="span-left">{item[0]}</span>
-                            <span className="span-right" style={{position:"relative", right:"10px"}}>{item[1]}</span>
+                    <div class="col-md-12">
+                        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                            <div class="col p-4 d-flex flex-column position-static">
+                                <strong class="d-inline-block mb-2 text-primary">{item.projeAdi}</strong>
+                                <h3 class="mb-0">{item.projeAdi}</h3>
+                                <div class="mb-1 text-muted">Nov 12</div>
+                                <p class="card-text mb-auto">{item.projeMetni}</p>
+                                <a href="#" class="stretched-link">Continue reading</a>
+                            </div>
                         </div>
+                    </div>
                 )
-
-
             })
 
 
@@ -52,15 +70,10 @@ class Investor extends Component {
     render() {
         const { email, password } = this.state;
         return (
-            <div className="login">
+            <div>
                 <CustomBar />
-                <div className="App-header">
-
-                  
+                <div class="container">
                         <div>{this.renderCompanies()}</div>
-
-                        <iframe style={{position:"absolute", bottom:"0px", right:"0"}} height="800px" width="500px" src="https://bot.dialogflow.com/1fcb06cd-b346-438c-ac30-9a3f9aee45f2"></iframe>
-
                 </div>
             </div>
         );
