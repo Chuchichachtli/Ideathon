@@ -26,7 +26,7 @@ class StartUpLogin extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <>
+      <div className="bg-div">
         <CustomBar />
         <div class="container">
 
@@ -40,7 +40,7 @@ class StartUpLogin extends Component {
               <label>Password:</label>
               <input class="form-control" type="password" id="password" value={password} onChange={(e) => {this.handlePWChange(e)}} />
             </div>
-            <input class="btn btn-default" ype="button" value="Login" onClick={this.login} />
+            <input class="btn btn-default" type="button" value="Login" onClick={this.login} />
             
             <a className="small-sign-up" href="/start-up-registration">Don't have an account? 
               <span style={{pointer:"cursor"}}><a onClick={() => {  }} style={{ pointer: "cursor", fontWeight:"600" }}> Sign up </a></span>
@@ -48,7 +48,7 @@ class StartUpLogin extends Component {
 
           </form>
         </div>
-      </>
+      </div>
     );
   }
 }

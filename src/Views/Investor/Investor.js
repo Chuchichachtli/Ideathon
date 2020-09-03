@@ -39,7 +39,7 @@ class Investor extends Component {
         const { startups } = this.state;
         console.log(startups, "asddd")
         return (
-            <>
+            <div className="bg-div">
                 <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text" id="basic-addon1">Arama</span>
@@ -67,7 +67,7 @@ class Investor extends Component {
 
 
             )}
-            </>)
+            </div>)
 
 
     }

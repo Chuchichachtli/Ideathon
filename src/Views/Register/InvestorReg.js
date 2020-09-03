@@ -119,9 +119,9 @@ class InvestorReg extends Component {
   render() {
     const { email, password, name, ilgi, currentIlgi, succ } = this.state;
     return (
-      <>
+      <div className="bg-div">
         <CustomBar />
-        <div class="container">
+        <div class="container ">
 
           <form>
             {/* <img src={izmir} className="log-image" /> */}
@@ -156,7 +156,7 @@ class InvestorReg extends Component {
 
 
         </div>
-      </>
+      </div>
     );
   }
 }

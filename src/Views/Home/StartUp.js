@@ -7,9 +7,9 @@ import Takvim from '../../Components/Takvim';
 
 function StartUp() {
   return (
-    <div>
+    <div className="bg-div">
       <CustomBar/>
-<div class="container">
+<div class="container ">
 <div class="row">
 
 
@@ -22,7 +22,7 @@ function StartUp() {
           <a href="/fikir-form" class="stretched-link"></a>
         </div>
       </div>
-      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative bg-light">
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary">Bilgi</strong>
           <h3 class="mb-0">FabLab</h3>

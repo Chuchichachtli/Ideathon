@@ -6,7 +6,7 @@ import koneksin from '../../koneksin.jpg'
 
 function Home() {
   return (
-    <div>
+    <div className="bg-div">
       <CustomBar/>
 
 <div class="container">

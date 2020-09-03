@@ -10,7 +10,7 @@ function Takvim() {
                 <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
                 <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"/>	
                 <>
-	<div class="container">
+	<div class="container bg-light">
 		<div class="row row-striped" style={{marginBottom:"10px"}}>
 			<div class="col-2 text-right">
 				<h3 class="display-10"><span class="badge badge-secondary">14</span></h3>

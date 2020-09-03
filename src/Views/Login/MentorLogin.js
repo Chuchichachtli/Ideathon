@@ -26,7 +26,7 @@ class MentorLogin extends Component {
   render() {
     const { email, password } = this.state;
     return (
-      <div className="login">
+      <div className="bg-div">
         <CustomBar />
         <div className="App-header">
 

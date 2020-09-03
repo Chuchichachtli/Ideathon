@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 // import './Login.scss';
 // import '../Home/Home.scss'
 import CustomBar from '../../Components/Navbar/CustomBar';
+import "../../hoppa.scss"
 // import izmir from '../../izmir.jpg';
 
 class FikirForm extends Component {
@@ -141,7 +142,7 @@ renderTopics = ()=>{
   render() {
     const { adSoyad, yas, telefon, eposta, projeAdi, projeKisaca, projeNedeni, projeKategori, projeMaliyet, projeYatirim} = this.state;
     return (
-        <>
+        <div className="bg-div">
         <CustomBar />
           <div class="container">
             <form style={{paddingBottom:"30px"}}>
@@ -236,7 +237,7 @@ renderTopics = ()=>{
             </form>
 
           </div>
-        </>
+        </div>
     );
   }
 }

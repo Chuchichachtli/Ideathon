@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-// import './Login.scss';
-// import '../Home/Home.scss'
+
+import "../../hoppa.scss";
 import CustomBar from '../../Components/Navbar/CustomBar';
 import izmir from '../../izmir.jpg';
 import { useHistory } from 'react-router-dom';
@@ -59,7 +59,7 @@ class InvestorLogin extends Component {
     const { email, password } = this.state;
     console.log(this.state)
     return (
-      <>
+      <div className="bg-div">
         <CustomBar />
         <div class="container">
 
@@ -81,7 +81,7 @@ class InvestorLogin extends Component {
 
           </form>
         </div>
-      </>
+      </div>
     );
   }
 }
