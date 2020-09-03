@@ -41,8 +41,9 @@ class StartUpLogin extends Component {
               <label>Password:</label>
               <input class="form-control" type="password" id="password" value={password} onChange={(e) => {this.handlePWChange(e)}} />
             </div>
+            <a href="/start-up">
             <input class="btn btn-default bg-light" type="button" style={{marginRight:"10px"}} value="Login" onClick={this.login} />
-            
+            </a>
             <a className="small-sign-up" href="/start-up-registration">Don't have an account? 
               <span style={{pointer:"cursor"}}><a onClick={() => {  }} style={{ pointer: "cursor", fontWeight:"600" }}> Sign up </a></span>
             and join our Network!</a>
